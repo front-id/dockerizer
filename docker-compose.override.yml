@@ -49,7 +49,7 @@ services:
     labels:
       # Minimal modifications to allow subdomain wildcard. Any URL that does not match with
       # taken domains like pma."project".localhost will fall intro apache container.
-      traefik.frontend.rule: HostRegexp:${PROJECT_BASE_URL}, {subdomain:[a-z]+}.${PROJECT_BASE_URL}
+      traefik.frontend.rule: HostRegexp:${PROJECT_NAME}.localhost, {subdomain:[a-z]+}.${PROJECT_NAME}.localhost
 
   pma:
     network_mode: traefik_default

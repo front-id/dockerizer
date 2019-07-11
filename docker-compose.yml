@@ -53,7 +53,7 @@ services:
     labels:
       - 'traefik.backend=${PROJECT_NAME}_mailhog'
       - 'traefik.port=8025'
-      - 'traefik.frontend.rule=Host:mailhog.${PROJECT_BASE_URL}'
+      - 'traefik.frontend.rule=Host:mailhog.${PROJECT_NAME}.localhost'
 
   apache:
     image: wodby/apache:$APACHE_TAG
@@ -73,7 +73,7 @@ services:
     labels:
       - 'traefik.backend=${PROJECT_NAME}_apache'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:${PROJECT_BASE_URL}'
+      - 'traefik.frontend.rule=Host:${PROJECT_NAME}.localhost'
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -87,4 +87,4 @@ services:
     labels:
       - 'traefik.backend=${PROJECT_NAME}_pma'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:pma.${PROJECT_BASE_URL}'
+      - 'traefik.frontend.rule=Host:pma.${PROJECT_NAME}.localhost'

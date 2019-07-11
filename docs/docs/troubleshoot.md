@@ -1,5 +1,5 @@
 # I can't connect to the DB as I was doing it on my localhost
-Since the DB it's a independent container, the right way to connect to it is point to the remote container like this:
+Since the DB it's an independent container, the right way to connect to it is pointing to the remote container like this:
 
 ```
 'database' => '[DB_NAME]',
@@ -34,15 +34,15 @@ We should connect from our web project using this config:
 
 # Chrome shows me "Your connection is not private" when I try to enter to the https dockerized page.
 
-Since dockerizer provides a self signed certificate to allow https localhost development, iy's common to see a warning link this:
+Since dockerizer provides a self signed certificate allowing https localhost development, it's likely you'll find a warning like this:
 
 [![](img/your-connection-is-not-private.png)](img/your-connection-is-not-private.png)
 
-The solution at chrome is to open a new tab and paste this command: `chrome://flags/#allow-insecure-localhost` mark the option to "enabled" and restart the browser:
+The solution for Chrome is opening a new tab and paste this command: `chrome://flags/#allow-insecure-localhost` mark the option to "enabled" and restart the browser:
 
 [![](img/conf-chrome-allow-https-self-signed.png) ](img/conf-chrome-allow-https-self-signed.png)
 
-Now chrome will show the page without prompting you with "Your connection is not private" anymore.
+Now Chrome will show the page without prompting you with "Your connection is not private" anymore.
 
 # I want PhpStorm stop debugging drush!
 
@@ -53,7 +53,7 @@ Just disable those options at your PhpStorm settings and you are done.
 
 # How can I debug drush scripts in drupal 8?
 
-Due to drupal-launcher loses it's mind when you are trying to debug a script. You need to bypass it calling directly the real drush command like this:
+Due to drupal-launcher loses its mind when you are trying to debug a script , you need to bypass it calling directly the real drush command like this:
 
 `cmd php ./vendor/drush/drush/drush foo:command` 
 

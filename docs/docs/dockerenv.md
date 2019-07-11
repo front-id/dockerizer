@@ -1,12 +1,11 @@
 # .docker.env file
 
-This is the shared docker configuration file. On it you can configure things like PHP version, MySQL version, PHP, settings an all you need to fit the project into the docker.
+This is the shared docker configuration file. You can configure things like PHP version, MySQL version, PHP, settings and all you need to fit the project into the docker.
 
 ## General 
 | PROJECT VARS                      | MEANING                                    | |
 |--------------------------|--------------------------------------------|--------------------------------------------------------------------------------------------|
 | PROJECT_NAME             | The project base name                      | Needs to be customized                                                                     |
-| PROJECT_BASE_URL         | The project url                            | Needs to be customized                                                                     |
 | PROJECT_BASE_PATH        | Base project's path                        | If your project resides in a subdir you can specify it on PROJECT_BASE_PATH                |
 
 ## PHP specific
@@ -36,6 +35,6 @@ The MariaDB default values ( defined in `docker-compose.override.yml` ) are conf
 For the rest of available variables please see  [https://github.com/wodby/docker4drupal](https://github.com/wodby/docker4drupal)
 
 ## Modifying variables just for you
-Since `.docker.env` is a common shared file you will not be able to make personal modifications on it. For this king of customizations you have `.docker.override.env`  
+Since `.docker.env` is a common shared file you will not be able to make personal modifications on it. For this kind of customizations you should use `.docker.override.env`
 
 `.docker.override.env` should be never committed since it is only for you and your environment. The usage is really simple. Just put in there the variables you want to override with the new value like in the original `.docker.env` file.
