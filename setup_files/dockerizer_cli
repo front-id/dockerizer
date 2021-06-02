@@ -78,6 +78,9 @@ _docker_project() {
 
 # run docker-compose commands on traefik service.
 _traefik_service() {
+    if [ ! "$(docker network ls | grep traefik_default)" ]; then
+        docker network create traefik_default
+    fi
     docker-compose -f /usr/local/bin/dk_traefik/docker-compose.yml $1
 }
 
